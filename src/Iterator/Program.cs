@@ -1,5 +1,10 @@
 ﻿using Iterator.Models;
 
+// DESAFIO: Sistema de Playlist de Música
+// PROBLEMA: Uma aplicação de streaming precisa permitir diferentes formas de navegar por
+// playlists (sequencial, aleatória, por gênero, filtrada). O código atual expõe a
+// estrutura interna das coleções e repete lógica de iteração em vários lugares
+
 Console.WriteLine("=== Sistema de Playlist ===");
 
 var playlist = new Playlist("Minhas Favoritas");
@@ -16,25 +21,3 @@ player.PlaySequential();
 player.PlayShuffle();
 player.PlayByGenre("Rock");
 player.PlayOldies();
-
-Console.WriteLine("\n=== PROBLEMAS ===");
-Console.WriteLine("✗ Estrutura interna da coleção exposta (List<Song> público)");
-Console.WriteLine("✗ Lógica de iteração repetida em múltiplos métodos");
-Console.WriteLine("✗ Cliente depende do tipo de coleção (List, Array, Queue)");
-Console.WriteLine("✗ Difícil mudar estrutura interna sem quebrar clientes");
-Console.WriteLine("✗ Não é possível iterar múltiplas coleções uniformemente");
-Console.WriteLine("✗ Não há forma padrão de pausar/retomar iteração");
-Console.WriteLine("✗ Filtros e transformações implementados no cliente");
-
-Console.WriteLine("\n=== Requisitos Não Atendidos ===");
-Console.WriteLine("• Interface uniforme para diferentes coleções");
-Console.WriteLine("• Múltiplas iterações simultâneas independentes");
-Console.WriteLine("• Iteração sem conhecer estrutura interna");
-Console.WriteLine("• Iteradores personalizados (reverso, circular, preguiçoso)");
-Console.WriteLine("• Composição de iteradores com filtros");
-
-// Perguntas para reflexão:
-// - Como acessar elementos sem expor representação interna?
-// - Como criar interface uniforme para diferentes coleções?
-// - Como permitir múltiplas travessias simultâneas?
-// - Como implementar diferentes formas de iteração?
